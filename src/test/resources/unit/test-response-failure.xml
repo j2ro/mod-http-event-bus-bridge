@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eventBusBridgeResponse>
+    <address>originaladdress</address>
+    <cause>Unable to contact server</cause>
+    <successful>false</successful>
+</eventBusBridgeResponse>

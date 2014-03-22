@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eventBusBridgeResponse>
+    <address>${address}</address>
+    <messageType>${messageType}</messageType>
+    <message>${message}</message>
+    <successful>true</successful>
+</eventBusBridgeResponse>

@@ -1,6 +1,13 @@
-*.class
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
 
-# Package Files #
-*.jar
-*.war
-*.ear
+.gradle/
+build/
+target/
+
+mods/

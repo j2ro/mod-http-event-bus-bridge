@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eventBusBridgeRequest>
+    <address>testaddress</address>
+    <messageType>String</messageType>
+    <message>SGVsbG8gV29ybGQ=</message>
+    <responseMediaType>application/xml</responseMediaType>
+    <responseUrl>http://www.test.com/response</responseUrl>
+</eventBusBridgeRequest>
