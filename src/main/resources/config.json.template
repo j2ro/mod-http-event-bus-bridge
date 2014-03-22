@@ -1,0 +1,13 @@
+{
+    "resources": ["org.vertx.java.http.eventbusbridge.service"],
+    "features": ["org.glassfish.jersey.jackson.JacksonFeature"],
+    "port": 8080,
+    "base_path": "/",    
+    "timeout": 60000,
+    "whitelist": {
+    	"inbound": {
+    		"address": [],
+    		"address_re": []
+    	}
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "host": "localhost",
+    "port": 8080,
+    "base_path": "/",
+    "resources": ["org.vertx.java.http.eventbusbridge.service"],
+    "features": ["org.glassfish.jersey.jackson.JacksonFeature"],
+    "timeout": 60000,
+    "whitelist": {
+    	"inbound": {
+    		"address": ["someaddress"],
+    		"address_re": ["address_pub_.*"]
+    	}
+    }
+}

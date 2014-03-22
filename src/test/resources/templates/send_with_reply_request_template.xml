@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eventBusBridgeRequest>
+    <address>${address}</address>
+    <messageType>${messageType}</messageType>
+    <message>${message}</message>
+    <responseMediaType>${responseMediaType}</responseMediaType>
+    <responseUrl>${responseUrl}</responseUrl>
+</eventBusBridgeRequest>

@@ -1,0 +1,14 @@
+{
+    "host": "localhost",
+    "port": 8080,
+    "base_path": "/",
+    "resources": ["io.vertx.service.rest"],
+    "features": ["org.glassfish.jersey.jackson.JacksonFeature"],
+    "timeout": 60000,
+    "whitelist": {
+    	"inbound": {
+    		"address": ["someaddress", "anotheraddress"],
+    		"address_re": ["all_.*", ".*_test"]
+    	}
+    }
+}

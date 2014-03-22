@@ -1,0 +1,7 @@
+{
+  "address" : "${address}",
+  "message" : "${message}",
+  "messageType" : "${messageType}",
+  "responseMediaType" : "${responseMediaType}",
+  "responseUrl" : "${responseUrl}"
+}

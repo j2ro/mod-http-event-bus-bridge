@@ -1,0 +1,6 @@
+{
+  "address" : "${address}",
+  "successful" : true,
+  "message" : "${message}",
+  "messageType" : "${messageType}"
+}

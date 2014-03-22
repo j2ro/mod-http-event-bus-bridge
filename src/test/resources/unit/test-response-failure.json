@@ -1,0 +1,5 @@
+{
+  "address" : "originaladdress",
+  "successful" : false,
+  "cause" : "Unable to contact server"
+}

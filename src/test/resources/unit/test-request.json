@@ -1,0 +1,7 @@
+{
+  "address" : "testaddress",
+  "responseUrl" : "http://www.test.com/response",
+  "message" : "SGVsbG8gV29ybGQ=",
+  "responseMediaType" : "application/json",
+  "messageType" : "String"
+}
