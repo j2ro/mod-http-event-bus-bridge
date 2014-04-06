@@ -58,7 +58,7 @@
 		<mods.directory>target/mods</mods.directory>
 
 		<!--Dependency versions -->
-		<vertx.version>2.1RC1</vertx.version>
+		<vertx.version>2.1RC3</vertx.version>
 		<vertx.testtools.version>2.0.3-final</vertx.testtools.version>
 		<junit.version>4.11</junit.version>
 		<vertx.mod.jersey.version>2.4.0-final</vertx.mod.jersey.version>
