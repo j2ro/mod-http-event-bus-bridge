@@ -145,7 +145,7 @@ public final class HttpResponseHandler implements Handler<AsyncResult<Message<Ob
 
 		@Override
 		public void handle(final HttpClientResponse response) {
-			if (response.statusCode() == Status.OK.getStatusCode()) {
+			if (response.statusCode() == Status.ACCEPTED.getStatusCode()) {
 				logger.debug("Reply sent successfully");
 			} else {
 				logger.warn("Error sending the reply to client. status code:" + response.statusCode()
