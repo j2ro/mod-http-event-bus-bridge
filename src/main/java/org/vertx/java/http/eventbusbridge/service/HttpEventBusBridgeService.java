@@ -145,4 +145,18 @@ public final class HttpEventBusBridgeService {
 		    return Response.status(Response.Status.BAD_REQUEST).build();
 		}
 	}
+
+	@Provider
+	public static final class WebApplicationExceptionMapper implements ExceptionMapper<WebApplicationException> {
+		public Response toResponse(final WebApplicationException exception) {
+		    return exception.getResponse();
+		}
+	}
+
+	@Provider
+	public static final class RuntimeExceptionMapper implements ExceptionMapper<RuntimeException> {
+		public Response toResponse(final RuntimeException exception) {
+		    return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+		}
+	}
 }
