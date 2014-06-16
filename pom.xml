@@ -8,8 +8,15 @@
 	<packaging>jar</packaging>
 	<version>1.0.0</version>
 	<name>Vert.x Http Event Bus Bridge Module</name>
+	<description>Http Event Bus Bridge Module for Vert.x</description>
 	<url>http://vertx.io</url>
 	<inceptionYear>2014</inceptionYear>
+	
+	<scm>
+        <connection>scm:git:ssh://git@github.com/j2ro/mod-http-event-bus-bridge.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/j2ro/mod-http-event-bus-bridge.git</developerConnection>
+        <url>https://github.com/j2ro/mod-http-event-bus-bridge</url>
+    </scm>
 
 	<licenses>
 		<license>
