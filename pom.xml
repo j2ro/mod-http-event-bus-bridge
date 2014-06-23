@@ -6,7 +6,7 @@
 	<groupId>com.github.j2ro</groupId>
 	<artifactId>http-event-bus-bridge</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<name>Vert.x Http Event Bus Bridge Module</name>
 	<description>Http Event Bus Bridge Module for Vert.x</description>
 	<url>http://vertx.io</url>
