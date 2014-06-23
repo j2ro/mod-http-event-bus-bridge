@@ -65,7 +65,7 @@
 		<mods.directory>target/mods</mods.directory>
 
 		<!--Dependency versions -->
-		<vertx.version>2.1</vertx.version>
+		<vertx.version>2.1.1</vertx.version>
 		<vertx.testtools.version>2.0.3-final</vertx.testtools.version>
 		<junit.version>4.11</junit.version>
 		<vertx.mod.jersey.version>2.6.0</vertx.mod.jersey.version>
@@ -73,6 +73,7 @@
 		<mockito.version>1.9.0</mockito.version>
 		<hk2.version>2.3.0-b05</hk2.version>
 		<asm.version>3.3.1</asm.version>
+		<log4j.version>1.2.17</log4j.version>
 
 		<!--Plugin versions -->
 		<maven.compiler.plugin.version>3.0</maven.compiler.plugin.version>
@@ -106,6 +107,13 @@
 	</distributionManagement>
 
 	<dependencies>
+
+		<!-- Bundled dependencies -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
 
 		<!-- Included dependencies -->
 		<dependency>

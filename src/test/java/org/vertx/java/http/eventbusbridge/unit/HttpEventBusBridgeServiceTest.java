@@ -24,11 +24,8 @@ import javax.ws.rs.WebApplicationException;
 
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.vertx.java.core.AsyncResult;
-import org.vertx.java.core.Handler;
 import org.vertx.java.core.Vertx;
 import org.vertx.java.core.eventbus.EventBus;
-import org.vertx.java.core.eventbus.Message;
 import org.vertx.java.core.http.HttpClient;
 import org.vertx.java.core.json.JsonArray;
 import org.vertx.java.core.json.JsonObject;
@@ -36,6 +33,7 @@ import org.vertx.java.http.eventbusbridge.model.EventBusBridgeRequest;
 import org.vertx.java.http.eventbusbridge.model.EventBusInstruction;
 import org.vertx.java.http.eventbusbridge.model.EventBusMessageType;
 import org.vertx.java.http.eventbusbridge.model.HttpResponseHandler;
+import org.vertx.java.http.eventbusbridge.model.NoOpResponseHandler;
 import org.vertx.java.http.eventbusbridge.service.HttpEventBusBridgeService;
 import org.vertx.java.platform.Container;
 
@@ -66,7 +64,7 @@ public class HttpEventBusBridgeServiceTest {
 		when(container.config()).thenReturn(config);
 
 		service.forward(request, EventBusInstruction.send, vertx, container);
-		verify(eventBus, times(1)).sendWithTimeout(address, (Object) message, timeout, (Handler<AsyncResult<Message<Object>>>) null);
+		verify(eventBus, times(1)).sendWithTimeout(eq(address), eq((Object) message), eq(timeout), any(NoOpResponseHandler.class));
 	}
 	
 	@Test

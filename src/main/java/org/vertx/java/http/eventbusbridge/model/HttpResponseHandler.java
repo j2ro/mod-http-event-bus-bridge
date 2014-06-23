@@ -53,6 +53,8 @@ public final class HttpResponseHandler implements Handler<AsyncResult<Message<Ob
 	 * Creates new instance of HttpResponseHandler.
 	 * @param url URL to post the reply to
 	 * @param mediaType MediaType of the reply
+	 * @param httpClient The HTTP client
+	 * @param address The address
 	 */
 	public HttpResponseHandler(final URL url, final String mediaType, final HttpClient httpClient, final String address) {
 		this.url = url;
