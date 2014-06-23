@@ -30,12 +30,16 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
 import org.codehaus.jackson.JsonParseException;
+import org.vertx.java.core.AsyncResult;
+import org.vertx.java.core.Handler;
 import org.vertx.java.core.Vertx;
+import org.vertx.java.core.eventbus.Message;
 import org.vertx.java.core.http.HttpClient;
 import org.vertx.java.core.json.JsonObject;
 import org.vertx.java.http.eventbusbridge.model.EventBusBridgeRequest;
 import org.vertx.java.http.eventbusbridge.model.EventBusInstruction;
 import org.vertx.java.http.eventbusbridge.model.HttpResponseHandler;
+import org.vertx.java.http.eventbusbridge.model.NoOpResponseHandler;
 import org.vertx.java.http.eventbusbridge.security.EventBusBridgeRequestValidator;
 import org.vertx.java.http.eventbusbridge.util.EventBusMessageTypeConverter;
 import org.vertx.java.platform.Container;
@@ -53,6 +57,7 @@ public final class HttpEventBusBridgeService {
 
 	private static final long DEFAULT_TIMEOUT = 0;
 	private static final String DEFAULT_RESPONSE_MEDIA_TYPE = MediaType.APPLICATION_JSON;
+	private static final NoOpResponseHandler NOOP_RESPONSE_HANDLER = new NoOpResponseHandler();
 
 	/**
 	 * Service to forward HTTP request onto the vertx event bus.
@@ -92,7 +97,7 @@ public final class HttpEventBusBridgeService {
 
 	private void send(final String address, final Object messageObject, final URL responseUrl,
 			          final String mediaType, final Vertx vertx, final Long timeout) throws MalformedURLException {
-		HttpResponseHandler responseHandler = createHandler(responseUrl, mediaType, vertx.createHttpClient(), address);
+		Handler<AsyncResult<Message<Object>>> responseHandler = createHandler(responseUrl, mediaType, vertx.createHttpClient(), address);
 		vertx.eventBus().sendWithTimeout(address, messageObject, timeout, responseHandler);
 	}
 
@@ -117,12 +122,12 @@ public final class HttpEventBusBridgeService {
 	 * @param mediaType MediaType of the reply
 	 * @param httpClient HttpClient
 	 * @param address address
-	 * @return new HttpResponseHandler instance if url was specified, otherwise null
+	 * @return new HttpResponseHandler instance if url was specified, otherwise NoOpResponseHandler
 	 * @throws MalformedURLException If response URL was in an invalid format
 	 */
-	private HttpResponseHandler createHandler(final URL url, final String mediaType,
+	private Handler<AsyncResult<Message<Object>>> createHandler(final URL url, final String mediaType,
 			                                  final HttpClient httpClient, final String address) throws MalformedURLException {
-		return url == null ? null : new HttpResponseHandler(url, mediaType, httpClient, address);
+		return url == null ? NOOP_RESPONSE_HANDLER : new HttpResponseHandler(url, mediaType, httpClient, address);
 	}
 
 	@Provider
