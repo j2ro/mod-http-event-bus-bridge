@@ -22,11 +22,11 @@ It currently supports the following:
 
 	Windows:
 
-	`set VERTX_OPTS=-Dvertx.langs.java=com.englishtown~vertx-mod-hk2~1.5.0-final:com.englishtown.vertx.hk2.HK2VerticleFactory`
+	`set VERTX_OPTS=-Dvertx.langs.java=com.englishtown~vertx-mod-hk2~1.7.0:com.englishtown.vertx.hk2.HK2VerticleFactory`
   	
 	Linux/Unix:
 
-	`export VERTX_OPTS=-Dvertx.langs.java=com.englishtown~vertx-mod-hk2~1.5.0-final:com.englishtown.vertx.hk2.HK2VerticleFactory`
+	`export VERTX_OPTS=-Dvertx.langs.java=com.englishtown~vertx-mod-hk2~1.7.0:com.englishtown.vertx.hk2.HK2VerticleFactory`
 
 * Now run the module:
 
